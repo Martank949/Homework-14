@@ -22,7 +22,7 @@ Blog.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    for_sale: {
+    for_sale_ad: {
         type: DataTypes.BOOLEAN,
     },
 }, {
