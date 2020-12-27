@@ -1,36 +1,36 @@
-<div class="menu-container">
+<div class="blog-container">
   <div class="card-header col-md-10">
     <h2>
       Everyday Mountain Biking Blog
     </h2>
   </div>
-  {{#each dishes as |dish|}}
-    <div class="dish col-md-5">
+  {{#each blogs as |blog|}}
+    <div class="blog col-md-5">
       <p>
-        {{dish.id}}.
-        {{dish.dish_name}}
+        {{blog.id}}.
+        {{blog.blog_name}}
       </p>
     </div>
     <div class="col-md-7">
       <p>
-        Guest:
-        {{dish.guest_name}}
+        New Post:
+        {{blog.user_name}}
       </p>
     </div>
   {{/each}}
 </div>
-<!-- This is the form for adding a new dish -->
-<div class="add-dish-container">
+<!-- This is the form for adding a new blog -->
+<div class="add-blog-container">
   <h2>
-    RSVP with the dish you plan to bring!
+    Please add a new posting to the blog:
   </h2>
-  <form class="new-dish-form">
-    <label for="dish_name">
-      Dish Name:
+  <form class="new-blog-form">
+    <label for="blog_name">
+      Blog Name:
     </label>
     <br />
-    <textarea id="dish_name" name="dish_name" rows="2" cols="30">
-      {{dish_name}}
+    <textarea id="blog_name" name="blog_name" rows="2" cols="30">
+      {{blog_name}}
     </textarea>
     <br />
     <label for="description">
@@ -41,18 +41,18 @@
       {{description}}
     </textarea>
     <br />
-    <label for="guest_name">
-      Guest Name:
+    <label for="user_name">
+      User Name:
     </label>
     <br />
-    <textarea id="guest_name" name="guest_name" rows="2" cols="30">
-      {{guest_name}}
+    <textarea id="user_name" name="user_name" rows="2" cols="30">
+      {{user_name}}
     </textarea>
     <br />
     <br />
-    <input type="checkbox" id="has_nuts" name="has_nuts" value="true" />
-    <label for="has_nuts">
-      Check box if this dish contains nuts
+    <input type="checkbox" id="for_sale" name="for_sale" value="true" />
+    <label for="for_sale">
+      Check box if this is for sale
     </label>
     <br />
     <button type="submit" value="Submit">
@@ -60,4 +60,4 @@
     </button>
   </form>
 </div>
-<script src="/js/add-dish.js"></script>
+<script src="/js/add-blog.js"></script>

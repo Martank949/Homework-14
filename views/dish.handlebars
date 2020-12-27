@@ -1,6 +1,6 @@
-<div class="dish-card">
-  <div class="dish-card-header">
-    {{dish_name}}
+<div class="blog-card">
+  <div class="blog-card-header">
+    {{blog_name}}
   </div>
   <div class="card-body">
     <p>
@@ -9,32 +9,32 @@
     </p>
     <p>
       Guest:
-      {{guest_name}}
+      {{user_name}}
     </p>
-    {{#if has_nuts}}
-      <p class="has-nuts">
-        Contains Nuts
+    {{#if for_sale}}
+      <p class="for-sale">
+        This is a SALE POST
       </p>
     {{/if}}
   </div>
 </div>
 
-<!-- This is the form for updating a dish. According to MVC framework, what is this form responsible for? -->
+<!-- This is the form for updating a blog. According to MVC framework, what is this form responsible for? -->
 <!-- This form is responsible for the UI logic, or the components in the View that the user will interact with. -->
 <!--What isn't it responsible for? -->
 <!--It is not responsible for data-related logic, requests, or business-logic. -->
 
-<div class="edit-dish-container">
+<div class="edit-blog-container">
   <h2>
-    Update Dish
+    Update blog
   </h2>
-  <form class="edit-dish-form">
-    <label for="dish_name">
-      Dish Name:
+  <form class="edit-blog-form">
+    <label for="blog_name">
+      Blog Name:
     </label>
     <br />
-    <textarea id="dish_name" name="dish_name" rows="2" cols="30">
-      {{dish_name}}
+    <textarea id="blog_name" name="blog_name" rows="2" cols="30">
+      {{blog_name}}
     </textarea>
     <br />
     <label for="description">
@@ -45,18 +45,18 @@
       {{description}}
     </textarea>
     <br />
-    <label for="guest_name">
-      Guest Name:
+    <label for="user_name">
+      User Name:
     </label>
     <br />
-    <textarea id="guest_name" name="guest_name" rows="2" cols="30">
-      {{guest_name}}
+    <textarea id="user_name" name="user_name" rows="2" cols="30">
+      {{user_name}}
     </textarea>
     <br />
     <br />
-    <input type="checkbox" id="has_nuts" name="has_nuts" value="true" />
-    <label for="has_nuts">
-      Check box if this dish contains nuts
+    <input type="checkbox" id="for_sale" name="for_sale" value="true" />
+    <label for="for_sale">
+      Check box if this is FOR SALE
     </label>
     <br />
     <button type="submit" value="Submit">
@@ -64,4 +64,4 @@
     </button>
   </form>
 </div>
-<script src="/js/edit-dish.js"></script>
+<script src="/js/edit-blog.js"></script>
