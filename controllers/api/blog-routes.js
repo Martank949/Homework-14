@@ -11,7 +11,13 @@ router.post("/", async(req, res) => {
             for_sale: req.body.for_sale,
         });
         res.status(200).json(blogData);
+        // Send over the 'loggedIn' session variable to the 'homepage' template
+        res.render("main", {
+            blogData,
+            loggedIn: req.session.loggedIn,
+        });
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
