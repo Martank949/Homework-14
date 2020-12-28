@@ -4,17 +4,21 @@
       Everyday Mountain Biking Blog
     </h2>
   </div>
+  <!-- going to pass in an array of objects from "blogs" -->
   {{#each blogs as |blog|}}
     <div class="blog col-md-5">
       <p>
-        {{blog.id}}.
-        {{blog.blog_name}}
+        {{blog.id}}
+        <h4>{{blog.blog_name}}</h4>
       </p>
     </div>
     <div class="col-md-7">
       <p>
-        New Post:
-        {{blog.user_name}}
+        Posted By:
+        <h4>{{blog.user_name}}</h4>
+        <br>
+        Whats On Your Mind?
+        <h4>{{blog.description}}</h4>
       </p>
     </div>
   {{/each}}
@@ -22,7 +26,7 @@
 <!-- This is the form for adding a new blog -->
 <div class="add-blog-container">
   <h2>
-    Please add a new posting to the blog:
+     Adding a new post to the blog:
   </h2>
   <form class="new-blog-form">
     <label for="blog_name">
