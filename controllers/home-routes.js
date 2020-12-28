@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Blog = require("../models/Blog");
 
-// route to get all blogs
+// route to get all blogs for homepage
 router.get("/", async(req, res) => {
     const blogData = await Blog.findAll().catch((err) => {
         res.json(err);
