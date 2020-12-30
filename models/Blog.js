@@ -14,16 +14,27 @@ Blog.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
     user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    date_posted: {
+        type: DataTypes.DATE,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     for_sale_ad: {
         type: DataTypes.BOOLEAN,
+    },
+    blog_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: "blog",
+            key: "id",
+        },
     },
 }, {
     sequelize,
