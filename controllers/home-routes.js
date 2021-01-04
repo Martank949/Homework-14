@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const authGuard = require("../utils/auth");
 const { Blog } = require("../models");
 
 // route to get all blogs for homepage
@@ -13,6 +14,10 @@ router.get("/", async(req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
+});
+
+router.get("/profile", authGuard, async(req, res) => {
+    res.render("profile", { loggedIn: req.session.loggedIn });
 });
 
 // route to get one blog
