@@ -1,21 +1,15 @@
 const router = require("express").Router();
-const Blog = require("../../models/Blog");
+const { Blog } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // route to create/add a blog
-router.post("/", async(req, res) => {
+router.post("/", withAuth, async(req, res) => {
     try {
-        const blogData = await Blog.create({
-            blog_name: req.body.blog_name,
-            description: req.body.description,
-            user_name: req.body.user_name,
-            for_sale: req.body.for_sale,
+        const newBlog = await Blog.create({
+            ...req.body,
+            user_id: req.session.user_id,
         });
-        res.status(200).json(blogData);
-        // Send over the 'loggedIn' session variable to the 'homepage' template
-        res.render("main", {
-            blogData,
-            loggedIn: req.session.loggedIn,
-        });
+        res.status(200).json(newBlog);
     } catch (err) {
         console.log(err);
         res.status(400).json(err);

@@ -7,7 +7,7 @@ const helpers = require("./utils/helpers");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 // Import express-session
 
-const router = require("./controllers/api/user-routes");
+const router = require("./controllers/api/userRoutes");
 const sequelize = require("./config/connection");
 
 const app = express();

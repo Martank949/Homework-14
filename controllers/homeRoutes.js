@@ -1,23 +1,43 @@
 const router = require("express").Router();
-const authGuard = require("../utils/auth");
-const { Blog } = require("../models");
+const { Blog, User } = require("../models");
+const withAuth = require("../utils/auth");
 
 // route to get all blogs for homepage
 router.get("/", async(req, res) => {
     try {
-        const blogData = await Blog.findAll();
+        const blogData = await Blog.findAll({
+            include: [{
+                model: User,
+                attributes: ["name"],
+            }, ],
+        });
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-        res.render("all", { blogs, loggedIn: req.session.loggedIn });
+        res.render("homepage", { blogs, loggedIn: req.session.loggedIn });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-router.get("/profile", authGuard, async(req, res) => {
-    res.render("profile", { loggedIn: req.session.loggedIn });
+router.get("/profile", withAuth, async(req, res) => {
+    // res.render("profile", { loggedIn: req.session.loggedIn });
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            attributes: { exclude: ["password"] },
+            include: [{ model: Blog }],
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render("profile", {
+            ...user,
+            loggedIn: true,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 // route to get one blog
