@@ -8,7 +8,7 @@ router.get("/", async(req, res) => {
         const blogData = await Blog.findAll({
             include: [{
                 model: User,
-                attributes: ["name"],
+                attributes: ["username"],
             }, ],
         });
 
@@ -27,15 +27,16 @@ router.get("/profile", withAuth, async(req, res) => {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ["password"] },
             include: [{ model: Blog }],
+            plain: true,
         });
-
-        const user = userData.get({ plain: true });
+        console.log(userData);
 
         res.render("profile", {
-            ...user,
+            ...userData,
             loggedIn: true,
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -43,16 +44,28 @@ router.get("/profile", withAuth, async(req, res) => {
 // route to get one blog
 router.get("/blog/:id", async(req, res) => {
     try {
-        const blogData = await Blog.findByPk(req.params.id);
-        if (!blogData) {
-            res.status(404).json({ message: "No blog with this id!" });
-            return;
+        const blogData = await Blog.findByPk(req.params.id); {
+            include: [{
+                model: User,
+                attributes: ["name"],
+            }, ];
         }
         const blog = blogData.get({ plain: true });
-        res.render("blog", blog);
+        res.render("blog", {
+            ...blog,
+            loggedIn: req.session.loggedIn,
+        });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
+});
+
+//route for all the blogs
+
+router.get("/blogs", (req, res) => {
+    //get blogs from db and render them in view
+    res.send("BLOGS");
 });
 
 // Login route

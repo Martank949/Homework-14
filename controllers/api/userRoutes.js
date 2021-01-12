@@ -8,7 +8,7 @@ router.post("/", async(req, res) => {
 
         // Set up sessions with a 'loggedIn' variable set to `true`
         req.session.save(() => {
-            req.session.user_id = userData.id;
+            req.session.blog_id = userData.id;
             req.session.loggedIn = true;
 
             res.status(200).json(userData);
@@ -27,28 +27,24 @@ router.post("/login", async(req, res) => {
                 email: req.body.email,
             },
         });
-
         if (!userData) {
             res
                 .status(403)
                 .json({ message: "Incorrect email or password. Please try again!" });
             return;
         }
-
         const validPassword = await userData.checkPassword(req.body.password);
-
+        console.log(userData.password);
         if (!validPassword) {
             res
                 .status(400)
                 .json({ message: "Incorrect email or password. Please try again!" });
             return;
         }
-
         // Once the user successfully logs in, set up the sessions variable 'loggedIn'
         req.session.save(() => {
-            req.session.user_id = userData.id;
+            req.session.blog_id = userData.id;
             req.session.loggedIn = true;
-
             res
                 .status(200)
                 .json({ user: userData, message: "You are now logged in!" });
