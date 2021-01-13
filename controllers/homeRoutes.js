@@ -30,7 +30,6 @@ router.get("/profile", withAuth, async(req, res) => {
             include: [{ model: Blog }],
             plain: true,
         });
-        console.log(userData.blogs[1]);
 
         res.render("profile", {
             ...userData,
