@@ -6,24 +6,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>🤘 Mountain Bike Blog Spot! 🤘</h1>
-    </header>
-
-    <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
-       <a href="/profile">Profile</a>
-      <button type="button" id="logout" class="btn btn-primary btn-md">Logout</button>
-      {{else}}
-      <a href="/login">Login</a>
-      {{/if}}
-    </nav>
-
-      <main class="container container-fluid mt-5">
+<body class="container-fluid">
+  <div class="jumbotron">
+      <h1 class="display-4">🤘 Mountain Bike Blog Spot! 🤘</h1>
+      <p>This is a simple mountain biking blog, share anything mountain bike related!</p>
+      
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Home</a>
+    </li>
+    {{#if loggedIn}}
+    <li class="nav-item">
+      <a class="nav-link" href="/profile">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/" id="logout">Logout</a>
+    </li>
+    {{else}}
+    <li class="nav-item">
+      <a class="nav-link" href="/login" id="login">Login</a>
+    </li>
+    {{/if}}
+  </ul>
+  <hr class="my-4">
+      <main class="container-fluid">
         {{{ body }}}
       </main>
   </div>

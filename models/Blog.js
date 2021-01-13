@@ -14,6 +14,7 @@ Blog.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    //referencing the home routes
     user_name: {
         type: DataTypes.STRING,
         allowNull: true,

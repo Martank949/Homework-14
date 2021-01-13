@@ -1,67 +1,17 @@
-<div class="blog-container">
-  <div class="card-header col-md-10">
+<div class="container">
+  <div class="card-header">
     <h2>
-      Everyday Mountain Biking Blog
+      Daily Mountain Bike Blogs
     </h2>
   </div>
   <!-- going to pass in an array of objects from "blogs" -->
   {{#each blogs as |blog|}}
-    <div class="blog col-md-5">
-      <p>
-        {{blog.id}}
-        <h4>{{blog.blog_name}}</h4>
-      </p>
+  <div class="card">
+      <h5 class="card-header">#{{blog.id}} - Posted By: {{blog.user_name}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{blog.blog_name}}</h5>
+      <p class="card-text">{{blog.description}}</p>
     </div>
-    <div class="col-md-7">
-      <p>
-        Posted By:
-        <h4>{{blog.user_name}}</h4>
-        <br>
-        Whats On Your Mind?
-        <h4>{{blog.description}}</h4>
-      </p>
-    </div>
-  {{/each}}
-</div>
-<!-- This is the form for adding a new blog -->
-<div class="add-blog-container">
-  <h2>
-     Adding a new post to the blog:
-  </h2>
-  <form class="new-blog-form">
-    <label for="blog_name">
-      Blog Name:
-    </label>
-    <br />
-    <textarea id="blog_name" name="blog_name" rows="2" cols="30">
-      {{blog_name}}
-    </textarea>
-    <br />
-    <label for="description">
-      Description:
-    </label>
-    <br />
-    <textarea id="description" name="description" rows="5" cols="30">
-      {{description}}
-    </textarea>
-    <br />
-    <label for="user_name">
-      User Name:
-    </label>
-    <br />
-    <textarea id="user_name" name="user_name" rows="2" cols="30">
-      {{user_name}}
-    </textarea>
-    <br />
-    <br />
-    <input type="checkbox" id="for_sale" name="for_sale" value="true" />
-    <label for="for_sale">
-      Check box if this is for sale
-    </label>
-    <br />
-    <button type="submit" value="Submit">
-      Submit
-    </button>
-  </form>
-</div>
+  </div>
+    {{/each}}
 {{!-- <script src="/js/profile.js"></script> --}}

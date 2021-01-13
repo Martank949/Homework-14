@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome {{username}}!</h2>
   </div>
 </div>
 
@@ -33,10 +33,10 @@
     {{#each blogs as |blog|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{blog.id}}">{{blog.name}}</a></h4>
+        <h4><a href="/project/{{blog.dataValues.id}}">{{blog.dataValues.blog_name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{blog.dataValues.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -44,5 +44,46 @@
   {{/if}}
   </div>
 </div>
+<!-- This is the form for adding a new blog 
+<div class="add-blog-container">
+  <h2>
+     Adding a new post to the blog:
+  </h2>
+  <form class="new-blog-form">
+    <label for="blog_name">
+      Blog Name:
+    </label>
+    <br />
+    <textarea id="blog_name" name="blog_name" rows="2" cols="30">
+      {{blog_name}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+    <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <label for="user_name">
+      User Name:
+    </label>
+    <br />
+    <textarea id="user_name" name="user_name" rows="2" cols="30">
+      {{user_name}}
+    </textarea>
+    <br />
+    <br />
+    <input type="checkbox" id="for_sale" name="for_sale" value="true" />
+    <label for="for_sale">
+      Check box if this is for sale
+    </label>
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+  </form>
+</div> -->
 
 <script src="/js/profile.js"></script>
