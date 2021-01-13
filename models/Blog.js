@@ -14,13 +14,14 @@ Blog.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    //referencing the home routes
     user_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     date_posted: {
         type: DataTypes.DATE,
-        allowNull: false,
+        default: () => new Date(),
     },
     description: {
         type: DataTypes.STRING,
@@ -32,7 +33,7 @@ Blog.init({
     blog_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: "blog",
+            model: "user",
             key: "id",
         },
     },

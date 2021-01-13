@@ -16,7 +16,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
 }
 
 header {
@@ -73,11 +72,9 @@ nav {
     border-radius: var(--border-radius);
     border-style: solid;
     border-width: medium;
-    background-color: var(--light);
     color: var(--dark);
     padding: 50px;
     text-align: center;
-    background-color: var(--tertiary);
 }
 
 .edit-blog-container {
@@ -91,11 +88,9 @@ nav {
     border-radius: var(--border-radius);
     border-style: solid;
     border-width: medium;
-    background-color: var(--light);
     color: var(--dark);
     padding: 50px;
     text-align: center;
-    background-color: var(--tertiary);
 }
 
 
@@ -112,7 +107,6 @@ nav {
     border-radius: var(--border-radius);
     border-style: solid;
     border-width: medium;
-    background-color: var(--light);
     color: var(--dark);
 }
 
@@ -124,14 +118,12 @@ nav {
     border-radius: var(--border-radius);
     border-style: groove;
     border-width: thick;
-    background-color: var(--light);
     color: var(--dark);
 }
 
 .card-header {
     color: var(--light);
     margin: 0;
-    background-color: var(--secondary);
     padding: 0.625rem;
     border: 3px solid var(--primary);
     border-radius: var(--border-radius);
@@ -147,7 +139,6 @@ nav {
     font-size: 1.5rem;
     color: var(--tertiary);
     margin: 0;
-    background-color: var(--light);
     padding: 0.625rem;
     border-bottom-style: solid;
 }
