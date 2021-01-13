@@ -30,7 +30,7 @@ Blog.init({
     for_sale_ad: {
         type: DataTypes.BOOLEAN,
     },
-    blog_id: {
+    user_id: {
         type: DataTypes.INTEGER,
         references: {
             model: "user",
