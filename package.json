@@ -4,8 +4,7 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "seeds": "node seeds/index.js",
-        "heroku-postbuild": "npm run seed"
+        "seeds": "node seeds/index.js"
     },
     "author": "",
     "license": "ISC",
