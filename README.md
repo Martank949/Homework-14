@@ -4,11 +4,11 @@
 
 ### This is the link to the GitHub Repo
 
-https://github.com/Martank949/Homework-14
+https://github.com/Martank949/Object-Relational-Mapping
 
 ### This is the link to the live page:
 
-https://martank949.github.io/Homework-14/
+https://martank949.github.io/Object-Relational-Mapping/
 
 ### This is the link to the video:
 
