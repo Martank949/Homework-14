@@ -1,18 +1,14 @@
-# Object-Relational Mapping (ORM)
+# Model-View Controller (MVC)
 
-## E-Commerce Back End Mapping
+MVC is an architectural pattern that structures a codebase in three distinct sections, according to a software design philosophy known as the separation of concerns.
 
 ### This is the link to the GitHub Repo
 
-https://github.com/Martank949/Object-Relational-Mapping
+https://martank949.github.io/Model-View-Controller/
 
 ### This is the link to the live page:
 
-https://martank949.github.io/Object-Relational-Mapping/
-
-### This is the link to the video:
-
-https://drive.google.com/file/d/1iUVaQ8iiqc8jpoUmrJtt2ouMgOk_xluw/view?usp=sharing
+https://martank949.github.io/Model-View-Controller/
 
 #
 
@@ -42,17 +38,12 @@ martinzb949@gmail.com
 
 ### Homework-14
 
-Internet retail, also known as e-commerce, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
-
-I built the back end for an e-commerce site by modifying the starter code. I worked with Express.js API to use Sequelize to interact with a MySQL database.
-
-Because this application won’t be deployed, I provided a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met.
+The Model is the data layer of the application. It is concerned with the structure of the database and the logic used to retrieve that data. I implemented Sequelize as the ORM for querying the database.
+Last but not least is the Controller. Think of it as the intermediary between the View and the Model. The Controller handles input from the user, interacts with the Model to create, read, update, or delete data, and then returns the results of that query to the user via the View layer. While using Express.js apps, we'll separate the client-side and server-side routes from each other.
 
 ## Usage Story
 
-AS A slave at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT the company that owns me can compete their other e-commerce companies
+As a user i would like to be MORE familiar with MVC's and learn to troubleshoot more thoroughly
 
 ## Installation Instructions:
 
